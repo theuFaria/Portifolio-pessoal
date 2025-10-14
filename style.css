@@ -1,0 +1,550 @@
+:root {
+    --corPrimaria: #161612;
+    --CorTexto: #eeeeee;
+    --corSegundaria: #222;
+    --corTerciaria: #333;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(fontes/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url(fontes/Poppins-Bold.ttf);
+}
+
+html {
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    color: var(--CorTexto);
+    scroll-behavior: smooth;
+}
+
+.bold {
+    font-family: PoppinsBold;
+}
+
+/* NavBar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    height: 80px;
+    background-color: var(--corPrimaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 1px solid var(--corSegundaria);
+}
+
+h1 {
+    font-size: 2rem;
+    width: 20%;
+}
+
+.listNavBar {
+    list-style: none;
+    display: flex;
+
+}
+
+.navBarItens {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+
+    li {
+        font-size: 1.2rem;
+    }
+}
+
+.underlineAnimation {
+    position: relative;
+}
+
+.underlineAnimation::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center;
+    background-color: var(--corTerciaria);
+    transition: all ease 0.5s;
+}
+
+.underlineAnimation:hover::after {
+    width: 100%;
+}
+
+.navBarLinks {
+    width: 20%;
+}
+
+.navBarLinks li {
+    font-size: 1.6rem;
+    width: 20%;
+
+    i {
+        color: var(--CorTexto);
+        transition: all ease-in-out 0.3s;
+    }
+}
+
+.navBarLinks li:hover {
+    i {
+        color: #fff;
+        transform: scale(1.5);
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: block;
+    height: 80px;
+}
+
+/* Home */
+
+#home,
+#sobreMim,
+#projetos,
+#skills {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+#home {
+    background-color: var(--corPrimaria);
+    justify-content: center;
+    padding: 20px;
+    scroll-margin: 100px;
+}
+
+.containerRightSideHome {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+
+    img {
+        height: 75%;
+        border-radius: 50%;
+        border: 5px solid var(--corSegundaria);
+    }
+}
+
+.containerLeftsideHome {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome {
+    margin-top: 30px;
+    font-size: 3rem;
+
+    span {
+        font-size: 1.5rem;
+    }
+}
+
+.bold {
+    color: var(--corSegundaria);
+}
+
+.btnHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 80px;
+    border: 2px solid var(--corSegundaria);
+    border-radius: 16px;
+}
+
+.containerBtnsHome {
+    margin-top: 20%;
+    display: flex;
+    gap: 20px;
+}
+
+.btnHome:hover {
+    background-color: var(--corSegundaria);
+    cursor: pointer;
+}
+
+/* Sobre mim */
+#sobreMim {
+    background-color: var(--corSegundaria);
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+
+    img {
+        width: 30%;
+        border: 5px solid var(--corPrimaria);
+    }
+
+    p {
+        width: 300px;
+        height: auto;
+        text-align: justify;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 2.2rem;
+        text-align: center;
+    }
+}
+
+img[title="Matheus Faria"] {
+    width: 70%;
+    border-radius: 10px;
+}
+
+/* Projetos */
+
+#projetos {
+    background-color: var(--corPrimaria);
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    scroll-margin: 40px;
+
+    h2 {
+        margin-top: 50px;
+        font-size: 2.2rem;
+    }
+}
+
+.containerProjetos {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.projeto {
+    width: 300px;
+    height: 450px;
+    border: 2px solid var(--corSegundaria);
+    border-radius: 10px;
+    box-shadow: 4px 3px 8px var(--corSegundaria);
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.aboutProject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    position: relative;
+    z-index: 0;
+}
+
+.imgProjeto {
+    height: 85%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    position: relative;
+    z-index: 0;
+}
+
+#postInsta {
+    background-image: url(imagems/post-insta.png);
+}
+
+#carrosel {
+    background-image: url(imagems/carrosel.png);
+}
+
+#portifolio {
+    background-image: url(imagems/portifolio-Imagem.jpg);
+    background-position: center;
+}
+
+.containerLinksProject {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    .linksProject:first-child {
+        margin-top: 25px;
+    }
+}
+
+.linksProject {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: rgb(22, 22, 16, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        font-size: 3rem;
+        transform: translateY(4px);
+        transition: all ease-in-out 0.3s;
+    }
+}
+
+.linksProject i:hover {
+    transform: scale(1.5);
+    color: #fff;
+}
+
+/* Skills */
+
+#skills {
+    background-color: var(--corSegundaria);
+    justify-content: center;
+    flex-wrap: wrap;
+    scroll-margin: 40px;
+
+    h2 {
+        font-size: 3rem;
+        margin-top: 50px;
+    }
+}
+
+.containerCardSkill {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.cardSkill {
+    width: 150px;
+    height: 150px;
+    background-color: var(--corPrimaria);
+    border-radius: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 0.3s;
+}
+
+.cardSkill:hover {
+    width: 200px;
+    height: 200px;
+}
+
+.skill {
+    font-size: 5.5rem;
+}
+
+/* Footer */
+
+#contato {
+    height: 10vh;
+    width: 100%;
+    background-color: var(--corPrimaria);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    ul {
+        justify-content: center;
+        gap: 50px;
+        width: auto;
+    }
+}
+
+/* Funcionalidades interativas */
+.hide {
+    display: none;
+}
+
+.actived {
+    display: flex !important;
+}
+
+.overlay {
+    position: relative;
+    z-index: 10;
+    background-color: rgb(22, 22, 16, 0.5);
+    width: 300px;
+    height: 450px;
+    bottom: 100%;
+}
+
+.animationDragUp {
+    animation-name: dragUp;
+    animation-duration: 0.3s;
+}
+
+@keyframes dragUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.animationDragDown {
+    animation-name: dragDown;
+    animation-duration: 0.3s;
+}
+
+@keyframes dragDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@media(max-width:460px) {
+    header {
+        display: none;
+    }
+
+    /* Home */
+    #home {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        height: auto;
+        padding-bottom: 30px;
+    }
+
+    .containerLeftSideHome {
+        margin: 30px;
+    }
+
+    .containerRightSideHome {
+        justify-content: center;
+        img {
+            width: 360px;
+            height: 360px;
+        }
+    }
+
+    #welcome {
+        font-size: 1.9rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 15px;
+        gap: 15px;
+
+        span {
+            font-size: 1.3rem;
+            text-align: center;
+        }
+    }
+
+    .btnHome {
+        width: 180px;
+        height: 60px;
+    }
+
+    .containerBtnsHome {
+        margin-top: 80px;
+    }
+
+    /* Sobre Mim */
+
+    #sobreMim {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+
+        div {
+            display: flex;
+            justify-content: center;
+            flex-direction: inherit;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        img {
+            width: 85%;
+        }
+
+        p {
+            width: 85%;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            font-size: 2rem;
+        }
+    }
+
+    /* Proejtos */
+    #projetos {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 50px;
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    .containerProjetos {
+        flex-direction: inherit;
+        align-items: center;
+        gap: 100px;
+    }
+
+    /* Skills */
+
+    #skills {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 30px 0;
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+    }
+
+    .containerCardSkill {
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
