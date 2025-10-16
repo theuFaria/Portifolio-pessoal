@@ -38,3 +38,19 @@ $(window).on("resize", function () {
         $("#welcome").html("Eu sou o Matheus Faria, <br> <span>Seja bem vindo ao meu portifólio website!</span>");
     }
 })
+
+$(window).on("scroll", function () {
+    const posScroll = $(window).scrollTop();
+
+    $("section").each(function () {
+        const top = $(this).offset().top - 100;
+        const bottom = top + $(this).outerHeight();
+
+        if(posScroll > top & posScroll < bottom){
+            const ativa = $(this).attr("id");
+            $("li div.activedSection").removeClass("activedSection");
+            $(`a[href="#${ativa}"] +`).addClass("activedSection");
+        }
+    })
+})
+
