@@ -5,7 +5,7 @@ projects.each(function (i) {
     $(this).on("mouseenter", () => {
         overlay.eq(i).addClass("animationDragUp");
         overlay.eq(i).removeClass("hide");
-        setTimeout(() => overlay.eq(i).removeClass("aniamtionDragUp"), 300)
+        setTimeout(() => overlay.eq(i).removeClass("animationDragUp"), 300)
         iconsLinksAppear();
     })
 })
@@ -27,6 +27,7 @@ function iconsLinksAppear() {
         linksProject.eq(i).addClass("actived");
     })
 };
+
 function iconsLinksDesapear() {
     linksProject.filter(() => linksProject.hasClass("actived")).removeClass("actived");
 }
@@ -46,10 +47,10 @@ $(window).on("scroll", function () {
         const top = $(this).offset().top - 100;
         const bottom = top + $(this).outerHeight();
 
-        if(posScroll > top & posScroll < bottom){
+        if (posScroll > top && posScroll < bottom) {
             const ativa = $(this).attr("id");
             $("li div.activedSection").removeClass("activedSection");
-            $(`a[href="#${ativa}"] +`).addClass("activedSection");
+            $(`a[href="#${ativa}"]`).next().addClass("activedSection");
         }
     })
 })

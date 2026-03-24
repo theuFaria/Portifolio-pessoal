@@ -39,7 +39,7 @@ html {
     width: 100%;
     z-index: 20;
     height: 80px;
-    background-color: var(--corPrimaria);
+    background-color: var(--corSegundaria);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -163,12 +163,6 @@ header {
     }
 }
 
-.containerLeftsideHome {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
-
 #welcome {
     margin-top: 30px;
     font-size: 3rem;
@@ -195,6 +189,7 @@ header {
 .containerBtnsHome {
     margin-top: 20%;
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -287,10 +282,12 @@ img[title="Matheus Faria"] {
 
 #postInsta {
     background-image: url(imagems/post-insta.png);
+    background-size: cover;
 }
 
-#carrosel {
-    background-image: url(imagems/carrosel.png);
+#twoPoints {
+    background-image: url(imagems/twoPointsHospital.png);
+    background-size: cover;
 }
 
 #portifolio {
@@ -331,27 +328,38 @@ img[title="Matheus Faria"] {
     color: #fff;
 }
 
+.containerTextOverlay {
+    color: var(--CorTexto);
+    margin-top: 40%;
+    text-align: center;
+}
+
+.containerTextOverlay:hover {
+    filter: brightness(5);
+}
+
 /* Skills */
 
 #skills {
     background-color: var(--corSegundaria);
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
     scroll-margin: 40px;
 
     h2 {
         font-size: 3rem;
         margin-top: 50px;
+        margin-bottom: 10%;
     }
 }
 
 .containerCardSkill {
-    display: inline-flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 20px;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 25px;
+    width: 50%;
 }
 
 .cardSkill {
@@ -363,6 +371,10 @@ img[title="Matheus Faria"] {
     justify-content: center;
     align-items: center;
     transition: all ease-in-out 0.3s;
+
+    i {
+        font-size: 75px;
+    }
 }
 
 .cardSkill:hover {
@@ -439,6 +451,95 @@ img[title="Matheus Faria"] {
     }
 }
 
+/* tablets */
+@media(max-width:900px) {
+
+    /* NavBar */
+
+    h1 {
+        font-size: 1.8rem;
+        width: 35%;
+    }
+
+    .navBarLinks {
+        gap: 10px;
+    }
+
+    /* Home */
+
+    #home {
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    .containerRightSideHome {
+        width: 100%;
+        height: 50%;
+        justify-content: center;
+        margin-bottom: 100px;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .btnHome {
+        width: 300px;
+        font-size: 1.5rem;
+    }
+
+    /*Sobre Mim*/
+
+    #sobreMim {
+        flex-direction: column;
+
+        img {
+            width: 75%;
+        }
+
+        p {
+            width: 600px;
+            font-size: 1.2rem;
+        }
+    }
+
+    img[title="Matheus Faria"] {
+        width: 70%;
+        border-radius: 10px;
+    }
+
+    /*Projetos*/
+    .containerCardSkill {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #projetos {
+        flex-direction: row;
+        height: auto;
+        padding-bottom: 50px;
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    .containerProjetos {
+        display: grid;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    #skills {
+        height: 50%;
+        padding-bottom: 100px;
+    }
+
+}
+
 /* Cellphone */
 @media(max-width:460px) {
     header {
@@ -446,6 +547,7 @@ img[title="Matheus Faria"] {
     }
 
     /* Home */
+
     #home {
         flex-direction: column;
         align-items: center;
@@ -484,6 +586,7 @@ img[title="Matheus Faria"] {
     .btnHome {
         width: 180px;
         height: 60px;
+        font-size: 1rem;
     }
 
     .containerBtnsHome {
@@ -555,8 +658,6 @@ img[title="Matheus Faria"] {
     }
 
     .containerCardSkill {
-        align-items: center;
-        flex-direction: column;
-        gap: 30px;
+        grid-template-columns: 1fr;
     }
 }
